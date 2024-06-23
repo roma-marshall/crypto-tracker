@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react'
-import {Layout, Card, Statistic, List, Typography, Spin, Tag} from 'antd'
-import {ArrowDownOutlined, ArrowUpOutlined} from '@ant-design/icons'
-import {fakeFetchAssets, fakeFetchCrypto} from '../../api'
-import {percentDifference} from '../../utils'
+import React, { useEffect, useState } from 'react'
+import { Layout, Card, Statistic, List, Typography, Spin, Tag } from 'antd'
+import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons'
+import { fakeFetchAssets, fakeFetchCrypto } from '../../api'
+import { percentDifference, capitalize } from '../../utils'
 
 const siderStyle = {
   padding: '1rem',
@@ -46,7 +46,7 @@ export default function AppSider() {
       {assets.map(asset => (
         <Card key={asset.id} style={{marginBottom: '1rem'}}>
           <Statistic
-            title={asset.id}
+            title={capitalize(asset.id)}
             value={asset.totalAmount}
             precision={2}
             valueStyle={{color: asset.grow ? '#3f8600' : '#cf1322'}}
