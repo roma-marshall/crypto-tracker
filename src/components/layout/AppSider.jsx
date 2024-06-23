@@ -40,7 +40,6 @@ export default function AppSider() {
     return <Spin fullscreen/>
   }
 
-
   return (
     <Layout.Sider width="25%" style={siderStyle}>
       {assets.map(asset => (
